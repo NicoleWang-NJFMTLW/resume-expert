@@ -595,6 +595,7 @@
   .mapnote th,.mapnote td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
   .mapnote th{font-size:.78rem;color:var(--text-muted);font-weight:500;background:var(--surface-2)}
   .mapnote td:first-child{color:var(--text-muted)}
+  .map-print{display:none}
 
   /* ---- 导出 PDF ---- */
   .export-btn{margin-left:auto;padding:6px 14px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:inherit;font-size:.82rem;cursor:pointer;white-space:nowrap}
@@ -611,7 +612,8 @@
     nav.jumpnav,.export-btn,.copy-btn,.chip-btn,.map-btn,.map-line,.topic-toggle,.mapnote-close{display:none !important}
     .contact-chip .chip-value{display:inline !important}
     .contact{flex-wrap:wrap}
-    .mapnote{display:block !important;position:static !important;inset:auto !important;width:auto !important;max-height:none !important;overflow:visible !important;margin:0 0 14px !important;box-shadow:none !important;padding:12px 14px !important}
+    #mdpi-map{display:none !important}
+    .map-print{display:block !important;position:static !important;inset:auto !important;width:auto !important;max-height:none !important;overflow:visible !important;margin:0 0 14px !important;box-shadow:none !important;padding:12px 14px !important}
     .block,.subgroup,details.job,.job-body,.summary-card,.timeline{break-inside:auto !important}
     li,tr,.topic-row,.proj-head{break-inside:avoid}
     .section-head,h4{break-after:avoid}
@@ -783,8 +785,8 @@
         <div class="job-body">
 
         <p class="map-line"><button type="button" class="map-btn" popovertarget="mdpi-map">同行评审经历与大模型专家评测的对应关系 ⓘ</button></p>
-        <div id="mdpi-map" popover class="mapnote" role="dialog" aria-labelledby="mdpi-map-title">
-          <div class="mapnote-head"><b id="mdpi-map-title">同行评审 × 大模型专家评测：对应关系</b><button type="button" class="mapnote-close" popovertarget="mdpi-map" popovertargetaction="hide" aria-label="关闭">×</button></div>
+        <div class="mapnote map-print" aria-hidden="true">
+          <div class="mapnote-head"><b>同行评审 × 大模型专家评测：对应关系</b></div>
           <p>学术期刊的同行评审，本质上是"组织领域专家，按统一标准评审产出并把控质量"。这与大模型数据生产中的专家评测，是同一套运营能力：</p>
           <table>
             <thead><tr><th>MDPI 期刊运营</th><th>大模型专家数据 / 评测</th></tr></thead>
@@ -995,6 +997,24 @@
   </footer>
 
 </div>
+
+        <div id="mdpi-map" popover class="mapnote" role="dialog" aria-labelledby="mdpi-map-title">
+          <div class="mapnote-head"><b id="mdpi-map-title">同行评审 × 大模型专家评测：对应关系</b><button type="button" class="mapnote-close" popovertarget="mdpi-map" popovertargetaction="hide" aria-label="关闭">×</button></div>
+          <p>学术期刊的同行评审，本质上是"组织领域专家，按统一标准评审产出并把控质量"。这与大模型数据生产中的专家评测，是同一套运营能力：</p>
+          <table>
+            <thead><tr><th>MDPI 期刊运营</th><th>大模型专家数据 / 评测</th></tr></thead>
+            <tbody>
+              <tr><td>审稿人库建设、特刊客座编辑邀请</td><td>专家资源池搭建、高端专家引入</td></tr>
+              <tr><td>审稿人学术背景与研究诚信审核</td><td>专家资质审核与准入</td></tr>
+              <tr><td>按研究方向邀请匹配的审稿人</td><td>需求与专家匹配、任务分发</td></tr>
+              <tr><td>审稿意见质量把控、编辑终审</td><td>专家产出质检与验收</td></tr>
+              <tr><td>审稿周期与全流程跟进</td><td>交付周期与履约管理</td></tr>
+              <tr><td>作者按活跃度分层激励（FP 项目）</td><td>专家分级与激励体系</td></tr>
+              <tr><td>专栏二次合作率超 50%</td><td>专家留存与复用</td></tr>
+              <tr><td>测算免费发表比例上限（单个特刊不超过 50%）</td><td>成本与预算管控</td></tr>
+            </tbody>
+          </table>
+        </div>
 
 <script>
 (function(){
